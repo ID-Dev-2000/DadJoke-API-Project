@@ -11,6 +11,20 @@ main {
     margin: auto;
 }
 
+button {
+    border: solid 1px black;
+    border-radius: 0px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: lightgrey;
+}
+
+button:active {
+    background-color: azure;
+}
+
 .main-content {
     background-color: white;
     display: flex;
@@ -35,7 +49,15 @@ main {
     width: 200px;
     height: 50px;
     font-size: large;
-    border: solid 1px black;
-    border-radius: 0px;
-    cursor: pointer;
+}
+
+.favoriteHandler {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#addToFavorite:active, #viewFavorite:active {
+    background-color: darkseagreen;
 }
