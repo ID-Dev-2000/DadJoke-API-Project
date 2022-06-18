@@ -28,17 +28,23 @@ async function displayDadJoke() {
 
 // Function to store value to storage
 async function addJokeToFavorite() {
+    if (jokeID.innerHTML == '// Joke content //') {
+        return
+    } else {
     favoriteIcon.innerHTML = '★'
     let jokeData = jokeID.innerHTML
-    localStorage.setItem('savedJoke', jokeData)
-    let dataItem = localStorage.getItem('savedJoke')
-    return dataItem
+    sessionStorage.setItem('savedJoke', jokeData)
+    }
 }
 
-async function viewFavoriteJokes() {
+function viewFavoriteJokes() {
     // needs to take stored data and display in temp element
-    jokeID.innerHTML = localStorage.getItem('savedJoke')
+    if (jokeID.innerHTML == '// Joke content //') {
+        return
+    } else {
+    jokeID.innerHTML = sessionStorage.getItem('savedJoke')
     favoriteIcon.innerHTML = '★'
+    }
 }
 
 // Event listeners
